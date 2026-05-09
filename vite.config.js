@@ -8,6 +8,10 @@ import react from '@vitejs/plugin-react'
 // In production, point the app at the real domains (or your own backend
 // proxy) — these dev proxies only run under `npm run dev`.
 export default defineConfig({
+  // Must match your GitHub repo name so asset paths resolve at
+  // https://<username>.github.io/<repo-name>/. Change this if your
+  // repo on GitHub is named something other than "polymarket-dashboard".
+  base: 'http://developerpawanmaurya.github.io/PolyAgent/',
   plugins: [react()],
   server: {
     proxy: {
