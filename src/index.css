@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-0 text-white font-sans;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-1;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-4 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e3448;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-2 rounded-xl border border-border shadow-card;
+  }
+
+  .badge-yes {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium font-mono
+           bg-emerald-900/40 text-emerald-400 border border-emerald-800/50;
+  }
+
+  .badge-no {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium font-mono
+           bg-rose-900/40 text-rose-400 border border-rose-800/50;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg text-sm font-medium
+           bg-emerald-600 hover:bg-emerald-500
+           text-white transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-emerald-500/50;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-2 rounded-lg text-sm font-medium
+           text-slate-400 hover:text-white hover:bg-surface-3
+           transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 rounded-lg text-sm
+           bg-surface-3 border border-border text-white
+           placeholder-slate-500
+           focus:outline-none focus:ring-1 focus:ring-emerald-500/70 focus:border-emerald-600
+           transition-colors duration-150;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-slate-400 hover:text-white hover:bg-surface-3
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  .nav-item.active {
+    @apply text-white bg-surface-3 shadow-neon;
+    border-left: 2px solid theme('colors.neon.green');
+  }
+}
