@@ -13,6 +13,9 @@ export default defineConfig({
   // Case-sensitive — must match the GitHub repo name exactly.
   base: '/PolyAgent/',
   plugins: [react()],
+  build: {
+    outDir: 'docs',
+  },
   server: {
     proxy: {
       // Gamma REST API — markets, events, metadata

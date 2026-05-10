@@ -34,10 +34,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Commit and push dist folder
+      - name: Commit and push docs folder
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git add dist/
-          git commit -m "build: update dist folder" || echo "No changes to commit"
+          git add docs/
+          git commit -m "build: update docs folder" || echo "No changes to commit"
           git push
